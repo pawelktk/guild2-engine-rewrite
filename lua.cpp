@@ -14,3 +14,9 @@ void(__cdecl* lua_settable)(lua_State *L, int idx) =
 
 void(__cdecl* lua_pushnumber)(lua_State *L,lua_Number n) =
 	reinterpret_cast<void(__cdecl*)(lua_State*, lua_Number)>(0x0070ed30);
+	
+	
+lua_Number(__cdecl* lua_tonumber)(lua_State *L,int idx) =
+	reinterpret_cast<lua_Number(__cdecl*)(lua_State*, int)>(0x0070eb30);
+char *(__cdecl* lua_tostring)(lua_State *L,int idx) =
+	reinterpret_cast<char *(__cdecl*)(lua_State*, int)>(0x0070ebc0);

@@ -3,9 +3,13 @@
 
 #include <cstdio>
 #include "GuildGameScriptBinding.hpp"
-
+#include "Classes/cl_GuildObject.hpp"
 
 #include <windows.h>
+
+#include "LogSystem.hpp"
+
+static bool firstLoaded = true;
 
 int __cdecl MyCustomLuaFunction(lua_State* L) {
     MessageBoxA(NULL, "test", "MyMod.dll", MB_OK);
@@ -14,6 +18,10 @@ int __cdecl MyCustomLuaFunction(lua_State* L) {
 
 
 extern "C" __declspec(dllexport) void __cdecl MyMod_GuildGameScriptBinding(lua_State *L) {
+	if(firstLoaded){
+		ER_LogWarning("@G2ER Using GuildGameScriptBinding from Guild2EngineRewrite");
+		firstLoaded = false;
+	}
 	//MessageBoxA(NULL, "GuildGameScriptBinding prolog", "MyMod.dll", MB_OK);
     GuildGameScriptBinding(L);
     //MessageBoxA(NULL, "GuildGameScriptBinding epilog", "MyMod.dll", MB_OK);

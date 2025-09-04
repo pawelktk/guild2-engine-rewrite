@@ -19,3 +19,11 @@ void*(__cdecl* IsInstanceOf)(
   void *object,
   char **class_name
 ) = reinterpret_cast<void*(__cdecl*)(void*, char**)>(0x00701420);
+
+
+// Those errors get thrown only in the AID console, pretty useful
+void(__cdecl* ScriptError)(
+    lua_State* L,
+    const char* format,
+    ...
+) = reinterpret_cast<void(__cdecl*)(lua_State*, const char* format, ...)>(0x0053edb0);

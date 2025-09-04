@@ -1,8 +1,12 @@
 #include "GuildGameScriptBinding.hpp"
-
+#include "BindingExtensions/GuildGameScriptBinding_Extensions.hpp"
 
 #include "GuildGameScriptBinding/UNIMPLEMENTED.hpp"
 
+ 
+// TODO Including the definitions directly is quite ugly
+// It will suffice for now
+// I'll write some script to autogenerate header files later on
 #include "GuildGameScriptBinding/GetHP.cpp"
 
 auto tolua_init = reinterpret_cast<void(__cdecl*)(lua_State*)>(0x006f6780);
@@ -3185,5 +3189,7 @@ void GuildGameScriptBinding(lua_State *L){
   lua_pushstring(L,"IncrementXPQuiet");
   lua_insert(L,-2);
   lua_settable(L,LUA_GLOBALSINDEX);
+  
+  GuildGameScriptBinding_RegisterExtensions(L);
 
 }

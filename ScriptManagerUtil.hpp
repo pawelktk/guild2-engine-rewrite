@@ -1,8 +1,9 @@
 #pragma once
 #include "lua.hpp"
 
+#define GUILDGAMESCRIPTBINDING_ADDITIONAL_DBG
 
-#define TYPE_CL_GUILDOBJECT (char **)(0x6C63AC)
+#define TYPE_CL_GUILDOBJECT (char **)(0x00ac63ac)
 //inline constexpr char** TYPE_CL_GUILDOBJECT = (char**)(0x00ac63ac);
 
 extern void(__cdecl* ScriptManager_InitDebugInfo_magic)(
@@ -19,8 +20,13 @@ extern void*(__cdecl* ResolveObjectFromAlias)(
   int print_error_messages
 );
 
-extern void*(__cdecl* IsInstanceOf)(
+/*extern void*(__cdecl* IsInstanceOf)(
   void *object,
   char **class_name
-);
+);*/
 
+extern void(__cdecl* ScriptError)(
+    lua_State* L,
+    const char* format,
+    ...
+);

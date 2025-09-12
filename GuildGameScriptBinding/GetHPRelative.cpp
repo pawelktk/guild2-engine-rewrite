@@ -1,7 +1,7 @@
 #include "../ScriptManagerUtil.hpp"
 #include "../RTTIInternalDynamicCast.hpp"
 #include "../lua.hpp"
-#include "LogSystem.hpp"
+#include "../LogSystem.hpp"
 
 auto GuildObject_GetHPRelative =
     reinterpret_cast<float(__fastcall *)(void *this_ptr)>(0x0062e700);

@@ -16,10 +16,10 @@ const char* DLL_NAME = "MyMod.dll";
 const char* FUNC_NAME = "MyMod_GuildGameScriptBinding";
 
 int main() {
-    std::fstream gameFile("Game.exe", std::ios::in | std::ios::out | std::ios::binary);
+    std::fstream gameFile("GuildII.exe", std::ios::in | std::ios::out | std::ios::binary);
 
     if (!gameFile.is_open()) {
-        std::cerr << "Can't open Game.exe!" << std::endl;
+        std::cerr << "Can't open GuildII.exe!" << std::endl;
         return 1;
     }
 

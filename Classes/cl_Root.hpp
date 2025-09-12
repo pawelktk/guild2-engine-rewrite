@@ -12,11 +12,11 @@
         009abb30 a0 10 40 00     addr       FUN_004010a0
         009abb34 d0 13 70 00     addr       LAB_007013d0
 */
-
+#pragma pack(push, 1)
 class cl_Root {
 public:
 	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
 	uint32_t refCount; // not sure, but looks like a ref count to me
 };
-
+#pragma pack(pop)
 static_assert(sizeof(cl_Root) == 8, "cl_Root has invalid size");

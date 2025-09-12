@@ -92,7 +92,7 @@
         009ce30c 70 5f 54 00     addr       FUN_00545f70
 
 */
-
+#pragma pack(push, 1)
 class cl_MeasureSimObject : public cl_ScriptSimObject {
 public:
 	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
@@ -103,5 +103,5 @@ public:
 	GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
 	uint8_t padding[124];
 };
-
+#pragma pack(pop)
 static_assert(sizeof(cl_MeasureSimObject) == 0x144, "cl_MeasureSimObject has incorrect size"); // 324

@@ -1,5 +1,7 @@
 #include "lua.hpp"
 
+//TODO Remove, deprecated
+
 void(__cdecl* lua_pushcclosure)(lua_State*, lua_CFunction, int) =
     reinterpret_cast<void(__cdecl*)(lua_State*, lua_CFunction, int)>(0x0070ee70);
 
@@ -20,3 +22,4 @@ lua_Number(__cdecl* lua_tonumber)(lua_State *L,int idx) =
 	reinterpret_cast<lua_Number(__cdecl*)(lua_State*, int)>(0x0070eb30);
 char *(__cdecl* lua_tostring)(lua_State *L,int idx) =
 	reinterpret_cast<char *(__cdecl*)(lua_State*, int)>(0x0070ebc0);
+	

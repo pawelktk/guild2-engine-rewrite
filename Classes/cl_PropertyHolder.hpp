@@ -39,13 +39,14 @@
         009f4f34 d0 f6 6f 00     addr       LAB_006ff6d0
 
 */
-
+#pragma pack(push, 1)
 class cl_PropertyHolder : public cl_Serializable {
 public:
 	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
 	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
 	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
+	// offset after cl_Serializable: 0x18 == 24
 	uint8_t padding[8];
 };
-
+#pragma pack(pop)
 static_assert(sizeof(cl_PropertyHolder) == 0x20, "cl_PropertyHolder has invalid size"); // 32

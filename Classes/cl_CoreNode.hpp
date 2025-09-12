@@ -41,14 +41,20 @@
         009f9a48 c0 e0 6f 00     addr       FUN_006fe0c0
         009f9a4c 10 e2 6f 00     addr       LAB_006fe210
 */
-
+#pragma pack(push, 1)
 class cl_CoreNode : public cl_PropertyHolder {
 public:
 	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
 	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
 	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
 	GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
-	uint8_t padding[36];
+	// offset after cl_PropertyHolder: 0x20 == 32
+	uint8_t padding_0[28];
+	char *name; // 0x3c == 60
+	uint8_t padding[4];
 };
+#pragma pack(pop)
+
+static_assert(offsetof(cl_CoreNode, name) == 0x3c, "Incorrect member offset");
 
 static_assert(sizeof(cl_CoreNode) == 0x44, "cl_CoreNode has invalid size"); // 68

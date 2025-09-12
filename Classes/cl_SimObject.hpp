@@ -71,7 +71,7 @@
         009c8e0c a0 19 57 00     addr       FUN_005719a0
 
 */
-
+#pragma pack(push, 1)
 class cl_SimObject : public cl_CoreNode {
 public:
 	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
@@ -81,5 +81,5 @@ public:
 	GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
 	uint8_t padding[80];
 };
-
+#pragma pack(pop)
 static_assert(sizeof(cl_SimObject) == 0x94, "cl_SimObject has invalid size"); // 148

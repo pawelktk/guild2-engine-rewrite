@@ -1,0 +1,26 @@
+# The rules for the autoformater are basically:
+# - keep it clean
+# - don't break my comments nor change their structure in any way
+# - don't break my long function argument lists so that I can copy/paste stuff around easily in vim
+# - use LLVM style for anything else
+# Those rules can change at any moment if I deem them detrimental to the code readability
+
+BasedOnStyle: LLVM
+# i need this to keep it readable and to keep it from breaking the lines it shouldn't
+ColumnLimit: 200
+
+# don't break my comments
+CommentPragmas: '^'
+ReflowComments: false
+
+# don't break my long function argument lists
+BinPackArguments: false
+BinPackParameters: false
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+
+
+# other
+Cpp11BracedListStyle: true
+# clean arrays
+AlignArrayOfStructures: Left

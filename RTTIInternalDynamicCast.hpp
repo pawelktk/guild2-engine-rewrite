@@ -4,7 +4,7 @@
 
 // RTTI structures pointers //
 #define RTTI_cl_GuildObject (char**)(0x00ac63ac)
-
+#define RTTI_cl_Sim (char**)(0x00ac6c0c)
 
 
 // dynamic_cast //
@@ -15,6 +15,11 @@ inline char** GetRttiForType();
 template<>
 inline char** GetRttiForType<cl_GuildObject>() {
     return RTTI_cl_GuildObject;
+}
+
+template<>
+inline char** GetRttiForType<cl_Sim>() {
+    return RTTI_cl_Sim;
 }
 
 // IsInstanceOf is basically game's dynamic_cast, but the actual casting part gets lost during compilation (that's why we need to reimplement it in internal_dynamic_cast)

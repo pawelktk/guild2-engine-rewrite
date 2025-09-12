@@ -35,7 +35,6 @@ int __cdecl GetHP(lua_State *L) {
   	if(hpValue==-1.0){
   		ER_LogWarning("@ADDITIONAL_DBG GetHP(%s) - Got hpValue == -1", lua_tostring(L,1));
   	}
-  	ER_LogWarning("@ADDITIONAL_DBG GetHP(%s) - Got hpValue == %f. (%s)->hp == %f", lua_tostring(L,1), hpValue, lua_tostring(L,1), pObject->hp);
   #endif
 
   lua_pushnumber(L, hpValue);

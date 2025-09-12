@@ -8,6 +8,9 @@
 // It will suffice for now
 // I'll write some script to autogenerate header files later on
 #include "GuildGameScriptBinding/GetHP.cpp"
+#include "GuildGameScriptBinding/GetHPRelative.cpp"
+#include "GuildGameScriptBinding/SimSetCourtLover.cpp"
+//#include "GuildGameScriptBinding/SimSetProgress.cpp"
 
 auto tolua_init = reinterpret_cast<void(__cdecl*)(lua_State*)>(0x006f6780);
 

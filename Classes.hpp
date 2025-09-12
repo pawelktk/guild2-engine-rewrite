@@ -12,4 +12,6 @@
 						#include "Classes/cl_ScriptSimObject.hpp"
 							#include "Classes/cl_MeasureSimObject.hpp"
 								#include "Classes/cl_GuildObject.hpp"
+									#include "Classes/cl_MovingSimObject.hpp"
+										#include "Classes/cl_Sim.hpp"
 // clang-format on

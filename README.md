@@ -27,28 +27,30 @@ If there is no update to the patcher just copy the new DLL, otherwise also repat
 
 There are some additions in Guild2EngineRewrite that aren't available in the base game script binding:
 
-- **BuildingSetAISetting**(\[Alias of type cl_Building\] pBuilding, string option, Number setTo) - Sets the AI setting for building. 
+### BuildingSetAISetting
+
+**BuildingSetAISetting**(\[Alias of type cl_Building\] pBuilding, string option, Number setTo) - Sets the AI setting for building.
 
 In the base game it's not possible to change it from the script level, and thus it severely limits what you can do with AI using Lua scripts. This addition changes that.
 
-All AI options:
+**All AI options:**
 
 ```
 Enable
-	BuySell
-		BuySell_Radius
-		BuySell_PriceLevel
-		BuySell_SellStock
-		BuySell_Carts
-	Workers
-		Workers_Quality
-		Workers_Favor
-	Budget
-		Budget_Repair
-		Budget_Upgrades
-	Produce
-		Produce_Selection
-		Produce_Stock
+ BuySell
+  BuySell_Radius
+  BuySell_PriceLevel
+  BuySell_SellStock
+  BuySell_Carts
+ Workers
+  Workers_Quality
+  Workers_Favor
+ Budget
+  Budget_Repair
+  Budget_Upgrades
+ Produce
+  Produce_Selection
+  Produce_Stock
 ```
 
 Those can be either 0 or 1 (disabled/enabled) for the higher level options (Enable, BuySell, Workers, Budget, Produce)
@@ -73,16 +75,15 @@ Example usage:
 BuildingSetAISetting("", "Produce", 0) -- disables the AI management of production completelly for building of alias ""
 ```
 
+### SetGameSpeed
 
-- **SetGameSpeed**(float Speed)
+**SetGameSpeed**(float Speed)
 
 Quick and hacky way to set the game speed without any restrictions. Press '-' to update the game speed after running this.
 
-It've created it only to be used for quick testing of the simulation. 
+It've created it only to be used for quick testing of the simulation.
 
 Use it only for testing - it **will** OOS in a muliplayer game, as it doesn't broadcast the setting change (like it would normally do when using the +/- key).
-
-
 
 ## Folders overview
 

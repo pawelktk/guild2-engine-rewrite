@@ -44,14 +44,14 @@
 #pragma pack(push, 1)
 class cl_CoreNode : public cl_PropertyHolder {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
-	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
-	GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
-	// offset after cl_PropertyHolder: 0x20 == 32
-	uint8_t padding_0[28];
-	char *name; // 0x3c == 60
-	uint8_t padding[4];
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
+  GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
+  GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
+  // offset after cl_PropertyHolder: 0x20 == 32
+  uint8_t padding_0[28];
+  char *name; // 0x3c == 60
+  uint8_t padding[4];
 };
 #pragma pack(pop)
 

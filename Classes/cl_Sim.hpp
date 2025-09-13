@@ -173,32 +173,26 @@
 #pragma pack(push, 1)
 class cl_Sim : public cl_MovingSimObject {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
-	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
-	GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
-	GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
-	GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
-	GENERATE_VTABLE_PADDING(pad_cl_GuildObject, 56)
-	// offset after cl_MovingSimObject: 0x510 == 1296
-	uint8_t padding[184];
-	cl_GuildObject *courtingSim; // 0x5c8 == 1480
-	uint8_t padding2[436];
-	
-	bool ArrangeLiaison(cl_Sim *secondSim) { return reinterpret_cast<bool(__thiscall*)(void*, cl_Sim*)>(0x0064d6d0)(this, secondSim); }
-	bool SetProgress(int progress) { return reinterpret_cast<bool(__thiscall*)(void*, int)>(0x006066b0)(this, progress); }
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
+  GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
+  GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
+  GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
+  GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
+  GENERATE_VTABLE_PADDING(pad_cl_GuildObject, 56)
+  // offset after cl_MovingSimObject: 0x510 == 1296
+  uint8_t padding[184];
+  cl_GuildObject *courtingSim; // 0x5c8 == 1480
+  uint8_t padding2[436];
 
-    bool SetCourtLover(cl_Sim* secondSim) {
-        return reinterpret_cast<bool(__thiscall*)(void*, cl_Sim*)>(0x00654f20)(this, secondSim);
-    }
-    bool AddCourtingProgress() {
-        return reinterpret_cast<bool(__thiscall*)(void*)>(0x0064dec0)(this);
-    }
-    bool Marry(cl_Sim* pTransferredSim) {
-        return reinterpret_cast<bool(__thiscall*)(void*, cl_Sim*)>(0x00652f50)(this, pTransferredSim);
-    }
-	//float GetHP() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062db00)(this); }
-	//float GetHPRelative() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062e700)(this); }
+  bool ArrangeLiaison(cl_Sim *secondSim) { return reinterpret_cast<bool(__thiscall *)(void *, cl_Sim *)>(0x0064d6d0)(this, secondSim); }
+  bool SetProgress(int progress) { return reinterpret_cast<bool(__thiscall *)(void *, int)>(0x006066b0)(this, progress); }
+
+  bool SetCourtLover(cl_Sim *secondSim) { return reinterpret_cast<bool(__thiscall *)(void *, cl_Sim *)>(0x00654f20)(this, secondSim); }
+  bool AddCourtingProgress() { return reinterpret_cast<bool(__thiscall *)(void *)>(0x0064dec0)(this); }
+  bool Marry(cl_Sim *pTransferredSim) { return reinterpret_cast<bool(__thiscall *)(void *, cl_Sim *)>(0x00652f50)(this, pTransferredSim); }
+  //float GetHP() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062db00)(this); }
+  //float GetHPRelative() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062e700)(this); }
 };
 #pragma pack(pop)
 static_assert(offsetof(cl_Sim, courtingSim) == 0x5c8, "Incorrect member offset");

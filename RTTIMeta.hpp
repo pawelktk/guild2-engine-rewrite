@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 
+// clang-format off
 
 // Vtable padding macros //
 
@@ -22,6 +23,4 @@
 #define GENERATE_VTABLE_PADDING(prefix, count) \
     BOOST_PP_REPEAT(count, DEFINE_VTABLE_ENTRY, prefix)
 
-
-
-
+// clang-format on

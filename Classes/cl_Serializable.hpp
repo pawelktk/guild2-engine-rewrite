@@ -32,8 +32,8 @@
 #pragma pack(push, 1)
 class cl_Serializable : public cl_RootRef {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
 };
 #pragma pack(pop)
 static_assert(sizeof(cl_Serializable) == 0x18, "cl_Serializable has invalid size"); // 24

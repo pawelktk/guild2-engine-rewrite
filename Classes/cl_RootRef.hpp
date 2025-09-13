@@ -15,8 +15,8 @@
 #pragma pack(push, 1)
 class cl_RootRef : public cl_Root {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	uint8_t padding[16];
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  uint8_t padding[16];
 };
 #pragma pack(pop)
 static_assert(sizeof(cl_RootRef) == 0x18, "cl_RootRef has invalid size"); // 24

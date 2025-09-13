@@ -150,35 +150,32 @@
 
 */
 
-
-
 #pragma pack(push, 1)
 class cl_GuildObject : public cl_MeasureSimObject {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
-	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
-	GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
-	GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
-	GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
-	GENERATE_VTABLE_PADDING(pad_cl_GuildObject, 56)
-	// offset after cl_MeasureSimObject: 0x144 == 324
-	uint8_t padding_1[46];
-	uint8_t pad[4];
-	//cl_GuildObject *courtingSim; // 0x172 == 370 // it doesn't really work right now
-	uint8_t padding0[14];
-	float hp; // 0x184 == 388
-	float maxHP; // 0x188 == 392
-	uint8_t padding1[492];
-	
-	float GetHP() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062db00)(this); }
-	float GetHPRelative() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062e700)(this); }
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
+  GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
+  GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
+  GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
+  GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
+  GENERATE_VTABLE_PADDING(pad_cl_GuildObject, 56)
+  // offset after cl_MeasureSimObject: 0x144 == 324
+  uint8_t padding_1[46];
+  uint8_t pad[4];
+  //cl_GuildObject *courtingSim; // 0x172 == 370 // it doesn't really work right now
+  uint8_t padding0[14];
+  float hp;    // 0x184 == 388
+  float maxHP; // 0x188 == 392
+  uint8_t padding1[492];
+
+  float GetHP() { return reinterpret_cast<float(__thiscall *)(void *)>(0x0062db00)(this); }
+  float GetHPRelative() { return reinterpret_cast<float(__thiscall *)(void *)>(0x0062e700)(this); }
 };
 #pragma pack(pop)
 
 //static_assert(offsetof(cl_GuildObject, courtingSim) == 0x172, "Incorrect member offset");
 static_assert(offsetof(cl_GuildObject, hp) == 0x184, "Incorrect member offset");
 static_assert(offsetof(cl_GuildObject, maxHP) == 0x188, "Incorrect member offset");
-
 
 static_assert(sizeof(cl_GuildObject) == 0x378, "cl_GuildObject has incorrect size"); // 888

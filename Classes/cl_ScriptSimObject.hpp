@@ -74,12 +74,12 @@
 #pragma pack(push, 1)
 class cl_ScriptSimObject : public cl_SimObject {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
-	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
-	GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
-	GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
-	uint8_t padding[52];
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
+  GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
+  GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
+  GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
+  uint8_t padding[52];
 };
 #pragma pack(pop)
 static_assert(sizeof(cl_ScriptSimObject) == 0xc8, "cl_ScriptSimObject has incorrect size"); // 200

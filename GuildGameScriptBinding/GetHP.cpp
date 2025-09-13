@@ -3,19 +3,13 @@
 
 #include "../LogSystem.hpp"
 
-#include "../RTTIInternalDynamicCast.hpp"
 #include "../Classes/cl_GuildObject.hpp"
+#include "../RTTIInternalDynamicCast.hpp"
 
-auto GuildObject_GetHP =
-    reinterpret_cast<float(__fastcall *)(void *this_ptr)>(0x0062db00);
-    
-
+auto GuildObject_GetHP = reinterpret_cast<float(__fastcall *)(void *this_ptr)>(0x0062db00);
 
 int __cdecl GetHP(lua_State *L) {
-  ScriptManager_InitDebugInfo_magic(
-      L, ".\\SourceCode\\GuildGameObjectsScript\\GuildGameScriptBinding.cpp",
-      12006, 1);
-
+  ScriptManager_InitDebugInfo_magic(L, ".\\SourceCode\\GuildGameObjectsScript\\GuildGameScriptBinding.cpp", 12006, 1);
 
   /*void *pObject = ResolveObjectFromAlias(L, 1, 0, 1);
   pObject = IsInstanceOf(pObject, TYPE_CL_GUILDOBJECT);
@@ -29,13 +23,12 @@ int __cdecl GetHP(lua_State *L) {
   } else {
     hpValue = pObject->GetHP(); //GuildObject_GetHP(pObject);
   }
-  
-  
-  #ifdef GUILDGAMESCRIPTBINDING_ADDITIONAL_DBG
-  	if(hpValue==-1.0){
-  		ER_LogWarning("@ADDITIONAL_DBG GetHP(%s) - Got hpValue == -1", lua_tostring(L,1));
-  	}
-  #endif
+
+#ifdef GUILDGAMESCRIPTBINDING_ADDITIONAL_DBG
+  if (hpValue == -1.0) {
+    ER_LogWarning("@ADDITIONAL_DBG GetHP(%s) - Got hpValue == -1", lua_tostring(L, 1));
+  }
+#endif
 
   lua_pushnumber(L, hpValue);
   return 1;

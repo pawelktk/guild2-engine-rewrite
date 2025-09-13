@@ -57,7 +57,7 @@ int BuildingSetAISetting(lua_State *L) {
   ScriptManager_InitDebugInfo_magic(L, "whatever_its_not_even_used", 12345, 1);
 
   std::string option = ReadStringArgument(L, 2, "", 1);
-  int setTo = ReadIntArgument(L, 3, true, 1);
+  int setTo = ReadIntArgument(L, 3, 1, 1);
   // TODO make use of the cl_Building after I implement it insead of using raw voidptrs
   void *pBuilding = (void *)ResolveObjectFromAlias(L, 1, 0, 1);
 

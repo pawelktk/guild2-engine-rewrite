@@ -2,7 +2,6 @@
 
 #include "../RTTIMeta.hpp"
 
-
 /*
         009abb1c 30 88 40 00     addr       FUN_00408830
         009abb20 d0 10 40 00     addr       FUN_004010d0
@@ -15,8 +14,8 @@
 #pragma pack(push, 1)
 class cl_Root {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	uint32_t refCount; // not sure, but looks like a ref count to me
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  uint32_t refCount; // not sure, but looks like a ref count to me
 };
 #pragma pack(pop)
 static_assert(sizeof(cl_Root) == 8, "cl_Root has invalid size");

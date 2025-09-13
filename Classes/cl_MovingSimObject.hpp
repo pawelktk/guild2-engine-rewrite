@@ -166,18 +166,18 @@
 #pragma pack(push, 1)
 class cl_MovingSimObject : public cl_GuildObject {
 public:
-	GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
-	GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
-	GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
-	GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
-	GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
-	GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
-	GENERATE_VTABLE_PADDING(pad_cl_GuildObject, 56)
-	// offset after cl_GuildObject: 0x378 == 888
-	uint8_t padding[408];
-	
-	//float GetHP() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062db00)(this); }
-	//float GetHPRelative() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062e700)(this); }
+  GENERATE_VTABLE_PADDING(pad_cl_Root, 7)
+  GENERATE_VTABLE_PADDING(pad_cl_Serializable, 11)
+  GENERATE_VTABLE_PADDING(pad_cl_PropertyHolder, 13)
+  GENERATE_VTABLE_PADDING(pad_cl_CoreNode, 2)
+  GENERATE_VTABLE_PADDING(pad_cl_SimObject, 28)
+  GENERATE_VTABLE_PADDING(pad_cl_MeasureSimObject, 20)
+  GENERATE_VTABLE_PADDING(pad_cl_GuildObject, 56)
+  // offset after cl_GuildObject: 0x378 == 888
+  uint8_t padding[408];
+
+  //float GetHP() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062db00)(this); }
+  //float GetHPRelative() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062e700)(this); }
 };
 #pragma pack(pop)
 //static_assert(offsetof(cl_GuildObject, hp) == 0x184, "Incorrect member offset");

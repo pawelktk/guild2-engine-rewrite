@@ -91,9 +91,21 @@ int BuildingSetAISetting(lua_State *L) {
   return 0;
 }
 
+int RunLua(lua_State *L){
+	ScriptManager_InitDebugInfo_magic(L, "whatever_its_not_even_used", 12345, 1);
+	std::string toRun = ReadStringArgument(L, 1, "", 1);
+	bool thereAreErrors = true;
+	if (toRun!=""){
+		thereAreErrors = lua_dostring(L, toRun.c_str());
+	}
+	lua_pushboolean(L, !thereAreErrors);
+	return 1;
+}
+
 void GuildGameScriptBinding_RegisterExtensions(lua_State *L) {
   //registerExtension(L, func, "myFunc");
   registerExtension(L, SetGameSpeed, "SetGameSpeed");
   //registerExtension(L, BuildingSetAISettingProduce, "BuildingSetAISettingProduce");
   registerExtension(L, BuildingSetAISetting, "BuildingSetAISetting");
+  registerExtension(L, RunLua, "RunLua");
 }

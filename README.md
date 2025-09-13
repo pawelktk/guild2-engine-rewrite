@@ -75,13 +75,28 @@ Example usage:
 BuildingSetAISetting("", "Produce", 0) -- disables the AI management of production completelly for building of alias ""
 ```
 
+### RunLua
+
+**RunLua**(string toRun) - runs lua script from string dynamically. Great for some lua console!
+
+Example usage:
+
+```lua
+	local toRun = [[
+		LogMessage("@RUNLUA Hello world! from RunLua")
+	]]
+	RunLua(toRun)
+	LogMessage("@RUNLUA Hello world! outside of RunLua")
+```
+
+
 ### SetGameSpeed
 
 **SetGameSpeed**(float Speed)
 
 Quick and hacky way to set the game speed without any restrictions. Press '-' to update the game speed after running this.
 
-It've created it only to be used for quick testing of the simulation.
+I've created it only to be used for quick testing of the simulation.
 
 Use it only for testing - it **will** OOS in a muliplayer game, as it doesn't broadcast the setting change (like it would normally do when using the +/- key).
 

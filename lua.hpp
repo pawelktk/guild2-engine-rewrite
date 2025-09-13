@@ -38,3 +38,5 @@ DEFINE_LUA_API(int, lua_iscfunction, 0x0070ea20, lua_State *L, int idx);
 DEFINE_LUA_API(int, lua_isnumber, 0x0070ea60, lua_State *L, int idx);
 DEFINE_LUA_API(int, lua_isstring, 0x0070eab0, lua_State *L, int idx);
 DEFINE_LUA_API(int, lua_isuserdata, 0x0070eaf0, lua_State *L, int idx);
+
+DEFINE_LUA_API(int, lua_dostring, 0x0070e410, lua_State *L, const char *str);

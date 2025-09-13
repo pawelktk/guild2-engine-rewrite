@@ -9,6 +9,7 @@
 #include "GuildGameScriptBinding/GetHP.cpp"
 #include "GuildGameScriptBinding/GetHPRelative.cpp"
 #include "GuildGameScriptBinding/SimSetCourtLover.cpp"
+#include "GuildGameScriptBinding/SimSetProgress.cpp"
 //#include "GuildGameScriptBinding/SimSetProgress.cpp"
 
 auto tolua_init = reinterpret_cast<void(__cdecl *)(lua_State *)>(0x006f6780);

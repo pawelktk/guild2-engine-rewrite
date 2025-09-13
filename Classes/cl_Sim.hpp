@@ -186,11 +186,12 @@ public:
   uint8_t padding2[436];
 
   bool ArrangeLiaison(cl_Sim *secondSim) { return reinterpret_cast<bool(__thiscall *)(void *, cl_Sim *)>(0x0064d6d0)(this, secondSim); }
-  bool SetProgress(int progress) { return reinterpret_cast<bool(__thiscall *)(void *, int)>(0x006066b0)(this, progress); }
+  bool SetProgress(int progress) { return reinterpret_cast<bool(__thiscall *)(void *, int)>(0x0064de80)(this, progress); }
 
   bool SetCourtLover(cl_Sim *secondSim) { return reinterpret_cast<bool(__thiscall *)(void *, cl_Sim *)>(0x00654f20)(this, secondSim); }
   bool AddCourtingProgress() { return reinterpret_cast<bool(__thiscall *)(void *)>(0x0064dec0)(this); }
   bool Marry(cl_Sim *pTransferredSim) { return reinterpret_cast<bool(__thiscall *)(void *, cl_Sim *)>(0x00652f50)(this, pTransferredSim); }
+  void *GetInsideBuilding() { return reinterpret_cast<void *(__thiscall *)(void *)>(0x006307b0)(this); } // TODO make this cl_Building instead of void*
   //float GetHP() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062db00)(this); }
   //float GetHPRelative() { return reinterpret_cast<float(__thiscall*)(void*)>(0x0062e700)(this); }
 };

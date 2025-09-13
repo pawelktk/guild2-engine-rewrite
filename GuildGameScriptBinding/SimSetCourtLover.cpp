@@ -12,7 +12,7 @@ int __cdecl SimSetCourtLover(lua_State *L) {
   if (firstSim != nullptr) {
     cl_Sim *secondSim = internal_dynamic_cast<cl_Sim>(ResolveObjectFromAlias(L, 2, 0, 1));
     // TODO i'm pretty sure there should be a second check for a nullptr on secondSim :)
-    // I'm leaving this as it is in the game code for now for testing
+    // I'm leaving this as it is in the game code for now
     if (firstSim->SetCourtLover(secondSim)) {
       lua_pushboolean(L, 1);
       return 1;

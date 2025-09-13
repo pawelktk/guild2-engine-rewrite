@@ -32,3 +32,5 @@ DEFINE_CDECL_FUNC(int, ReadIntArgument, 0x0053ee60, lua_State *L, int idx, int d
 DEFINE_CDECL_FUNC(double, ReadNumberArgument, 0x0053ee10, lua_State *L, int idx, double defaultValue, bool print_error_messages);
 
 DEFINE_CDECL_FUNC(const char *, ReadStringArgument, 0x0053ef50, lua_State *L, int idx, const char *defaultValue, int print_error_messages);
+
+DEFINE_CDECL_FUNC(int, ReadSkillArgument, 0x005fd4b0, lua_State *L, int idx);

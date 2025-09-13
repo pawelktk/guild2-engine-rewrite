@@ -6,8 +6,6 @@
 #include "../Classes/cl_GuildObject.hpp"
 #include "../RTTIInternalDynamicCast.hpp"
 
-auto GuildObject_GetHP = reinterpret_cast<float(__fastcall *)(void *this_ptr)>(0x0062db00);
-
 int __cdecl GetHP(lua_State *L) {
   ScriptManager_InitDebugInfo_magic(L, ".\\SourceCode\\GuildGameObjectsScript\\GuildGameScriptBinding.cpp", 12006, 1);
 

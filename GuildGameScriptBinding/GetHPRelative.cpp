@@ -16,7 +16,7 @@ int __cdecl GetHPRelative(lua_State *L) {
   if (pObject == nullptr) {
     hpValue = -1.0;
   } else {
-    hpValue = GuildObject_GetHPRelative(pObject);
+    hpValue = pObject->GetHPRelative();
   }
 
 #ifdef GUILDGAMESCRIPTBINDING_ADDITIONAL_DBG

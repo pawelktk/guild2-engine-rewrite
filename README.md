@@ -100,6 +100,49 @@ I've created it only to be used for quick testing of the simulation.
 
 Use it only for testing - it **will** OOS in a muliplayer game, as it doesn't broadcast the setting change (like it would normally do when using the +/- key).
 
+
+## Adding your own extensions
+
+New extensions can be added and registered in *BindingExtensions/GuildGameScriptBinding_Extensions.hpp*
+
+1. Write the function for the extension:
+
+```cpp
+int MyFunction(lua_State *L){
+	ScriptManager_InitDebugInfo_magic(L, "whatever_its_not_even_used", 12345, 1);
+	...
+	return 1;
+}
+```
+
+2. Register it in *GuildGameScriptBinding_RegisterExtensions* function:
+
+```cpp
+void GuildGameScriptBinding_RegisterExtensions(lua_State *L) {
+	...
+	registerExtension(L, MyFunction, "MyFunction");
+}
+```
+
+3. After recompiling it should be avilable in lua scripts as:
+
+```lua
+MyFunction()
+```
+
+## Implementing/Modifying existing functions
+
+If function is already implemented in G2ER just modify its source in *GuildGameScriptBinding* folder
+
+If the function doesn't have its own implementation in G2ER yet and you want to implement it:
+
+1. Write the function body in *GuildGameScriptBinding* folder
+
+2. Include the file with function implementation in *GuildGameScriptBinding.cpp*
+
+3. Uncomment line with the function name in *GuildGameScriptBinding/UNIMPLEMENTED.hpp*
+
+
 ## Folders overview
 
 - BindingExtensions - here you can put your own functions that will be registered by the engine

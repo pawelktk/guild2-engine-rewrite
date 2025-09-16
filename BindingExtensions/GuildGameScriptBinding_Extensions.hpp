@@ -32,6 +32,17 @@ int SetGameSpeed(lua_State *L) {
   return 0;
 }
 
+DEFINE_THISCALL_FUNC(void *, ns_GetController, 0x00502a80, void *pThis, const char *name);
+DEFINE_THISCALL_FUNC(void *, internalQuickSave, 0x004057b0, void *pThis);
+int Quicksave(lua_State *L) {
+	ScriptManager_InitDebugInfo_magic(L, "whatever_its_not_even_used", 12345, 1);
+	void *core = ns_GetCoreInstance();
+	void *game = ns_GetNode(core, "\\application\\game", true);
+	void *gic = ns_GetController(game, "GeneralInputCtrl");
+	internalQuickSave(gic);
+	return 0;
+}
+
 /*int BuildingSetAISettingProduce(lua_State *L){
 	ScriptManager_InitDebugInfo_magic(L, "whatever_its_not_even_used", 12345, 1);
 	bool toggle = ReadBoolArgument(L, 2, true, 1);
@@ -108,4 +119,5 @@ void GuildGameScriptBinding_RegisterExtensions(lua_State *L) {
   //registerExtension(L, BuildingSetAISettingProduce, "BuildingSetAISettingProduce");
   registerExtension(L, BuildingSetAISetting, "BuildingSetAISetting");
   registerExtension(L, RunLua, "RunLua");
+  registerExtension(L, Quicksave, "Quicksave");
 }

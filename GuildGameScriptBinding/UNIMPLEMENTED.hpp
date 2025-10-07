@@ -2,6 +2,13 @@
 
 #include "../lua.hpp"
 
+#ifdef USE_NATIVE_BINDINGS
+auto SimSetCourtLover = (lua_CFunction)(0x006074d0);
+auto SimSetProgress = (lua_CFunction)(0x006066b0);
+auto GetHP = (lua_CFunction)(0x0060b640);
+auto GetHPRelative = (lua_CFunction)(0x0060b6a0);
+#endif
+
 auto SimFindProduction = (lua_CFunction)(0x00602bf0);
 auto SquadCreate = (lua_CFunction)(0x00611980);
 auto SquadGet = (lua_CFunction)(0x00611c30);
@@ -189,7 +196,6 @@ auto SimGetDeadSpouseCount = (lua_CFunction)(0x00617120);
 auto SimGetChildren = (lua_CFunction)(0x00607f10);
 auto SimGetChildrenCount = (lua_CFunction)(0x00607fd0);
 auto SimCanStartCourtLover = (lua_CFunction)(0x00607440);
-//auto SimSetCourtLover = (lua_CFunction)(0x006074d0);
 auto SimGetCourtLover = (lua_CFunction)(0x00607680);
 auto SimGetCourtingSim = (lua_CFunction)(0x00616920);
 auto SimIsCourting = (lua_CFunction)(0x006169c0);
@@ -224,7 +230,6 @@ auto SimSetAge = (lua_CFunction)(0x00616310);
 auto SimGetProductivity = (lua_CFunction)(0x006065e0);
 auto SimGetPregnant = (lua_CFunction)(0x006163b0);
 auto SimGetProgress = (lua_CFunction)(0x00606640);
-//auto SimSetProgress = (lua_CFunction)(0x006066b0);
 auto SimGetFavourableCourtingAction = (lua_CFunction)(0x00606740);
 auto SimBeamMeUp = (lua_CFunction)(0x006068d0);
 auto SimStopMeasure = (lua_CFunction)(0x00606950);
@@ -424,8 +429,6 @@ auto SetExclusiveMeasure = (lua_CFunction)(0x006001a0);
 auto ForbidMeasure = (lua_CFunction)(0x00600240);
 auto AllowMeasure = (lua_CFunction)(0x006002d0);
 auto AllowAllMeasures = (lua_CFunction)(0x00600360);
-//auto GetHP = (lua_CFunction)(0x0060b640);
-//auto GetHPRelative = (lua_CFunction)(0x0060b6a0);
 auto ModifyHP = (lua_CFunction)(0x0060b700);
 auto GetMaxHP = (lua_CFunction)(0x0060b7e0);
 auto AddImpact = (lua_CFunction)(0x0060b8f0);
